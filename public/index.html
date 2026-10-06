@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Song Converter</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="card">
+      <div class="badge">PRIVATE • LOCAL CONVERTER</div>
+      <h1>Audio → MP3</h1>
+      <p class="sub">Convert audio you own or are licensed to use. Files are processed by this server and removed after conversion.</p>
+
+      <form id="form">
+        <label class="drop" id="drop">
+          <input id="audio" name="audio" type="file"
+            accept="audio/*,video/mp4,video/webm" hidden>
+          <span class="icon">♪</span>
+          <strong id="fileText">Choose an audio file</strong>
+          <small>MP3, WAV, FLAC, M4A, OGG, WebM, MP4 • up to 250 MB</small>
+        </label>
+
+        <div class="row">
+          <label>
+            <span>Output name</span>
+            <input name="title" id="title" placeholder="My custom song">
+          </label>
+          <label>
+            <span>Bitrate</span>
+            <select name="bitrate">
+              <option value="128k">128 kbps</option>
+              <option value="192k" selected>192 kbps</option>
+              <option value="256k">256 kbps</option>
+              <option value="320k">320 kbps</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="check">
+          <input id="rights" type="checkbox" required>
+          <span>I have the rights or permission to convert this file.</span>
+        </label>
+
+        <button id="convert" disabled>Convert to MP3</button>
+        <div id="status" class="status"></div>
+      </form>
+
+      <footer>
+        <span>No accounts</span>
+        <span>•</span>
+        <span>No tracking code</span>
+        <span>•</span>
+        <span>No third-party downloaders</span>
+      </footer>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

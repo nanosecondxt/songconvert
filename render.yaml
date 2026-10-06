@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: song-converter
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MAX_FILE_MB
+        value: "250"
+      - key: MAX_CONCURRENT
+        value: "2"
